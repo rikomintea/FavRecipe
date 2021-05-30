@@ -1,4 +1,4 @@
-//
+//  10366202
 //  RecipeListViewController.swift
 //  FavRecipe
 //
@@ -23,13 +23,17 @@ class RecipeListViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeListTableViewCell", for: indexPath as IndexPath)as!RecipeListTableViewCell
+        cell.recipeTitle.text = recipes[indexPath.row].recipeTitle
+        cell.recipeImage.image = UIImage(contentsOfFile:recipes[indexPath.row].recipeImagePath)
         return cell
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
     
     override func viewDidLoad() {
@@ -41,8 +45,8 @@ class RecipeListViewController: UIViewController,UITableViewDelegate,UITableView
         print (Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
-        
-
+    
+           
 
     
    

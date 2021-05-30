@@ -1,5 +1,5 @@
 //
-//  Recipe.swiftR
+//  Recipe.swift
 //  FavRecipe
 //
 //  Created by スマート・ナビ on 2021/05/25.
@@ -17,3 +17,5 @@ class Recipe: Object {
     @objc dynamic var memo: String = ""
     
 }
+
+
