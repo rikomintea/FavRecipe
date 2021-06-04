@@ -16,7 +16,7 @@ class RecipeInfoViewController: UIViewController, UINavigationControllerDelegate
     var recipeImage:PictureData!
     
     
-    @IBOutlet var recipeImageView: UIImageView!
+    @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var recipeTitleTextField: UITextField!
     @IBOutlet var recipeURLTextField: UITextField!
     @IBOutlet var memoTextField: UITextField!
@@ -24,7 +24,7 @@ class RecipeInfoViewController: UIViewController, UINavigationControllerDelegate
     
     
     override func viewDidLoad() {
-        //recipeImageView.image = recipeImage.
+        //photoImageView.image  = recipeImage.data
         recipeTitleTextField.text = recipe.recipeTitle
         recipeURLTextField.text = recipe.recipeURL
         memoTextField.text = recipe.memo
@@ -33,10 +33,7 @@ class RecipeInfoViewController: UIViewController, UINavigationControllerDelegate
     
     
     
-    
-    
-    
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         recipeTitleTextField.resignFirstResponder()
         recipeURLTextField.resignFirstResponder()

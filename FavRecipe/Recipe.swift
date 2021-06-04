@@ -17,3 +17,5 @@ class Recipe: Object {
     @objc dynamic var memo: String = ""
     
 }
+//@objc dynamic var data: NSData!
+

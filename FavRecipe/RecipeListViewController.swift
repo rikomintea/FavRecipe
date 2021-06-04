@@ -38,7 +38,7 @@ class RecipeListViewController: UIViewController,UITableViewDelegate,UITableView
     
     
     
-    
+
     var pictures: Results<PictureData>!
     //realm写真
     
@@ -140,6 +140,7 @@ class RecipeListViewController: UIViewController,UITableViewDelegate,UITableView
         //動作
         
 
+    
     
 
 

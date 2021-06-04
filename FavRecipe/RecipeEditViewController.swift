@@ -38,6 +38,8 @@ class RecipeEditViewController: UIViewController, UINavigationControllerDelegate
     }
      
     
+    
+    
     @IBAction func onTappedUploadButton(){
         if photoImageView.image != nil{
             let activityVC = UIActivityViewController(activityItems:[photoImageView.image!,"#PhotoMaster"],
