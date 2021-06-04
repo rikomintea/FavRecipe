@@ -9,19 +9,33 @@ import UIKit
 
 class RecipeInfoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate,UITextFieldDelegate{
     
-    @IBOutlet var photoImageView: UIImageView!
     
+    var num = Int()
+    
+    var recipe: Recipe!
+    var recipeImage:PictureData!
+    
+    
+    @IBOutlet var recipeImageView: UIImageView!
     @IBOutlet var recipeTitleTextField: UITextField!
     @IBOutlet var recipeURLTextField: UITextField!
     @IBOutlet var memoTextField: UITextField!
     
-   
+    
     
     override func viewDidLoad() {
-        
-        
-        
+        //recipeImageView.image = recipeImage.
+        recipeTitleTextField.text = recipe.recipeTitle
+        recipeURLTextField.text = recipe.recipeURL
+        memoTextField.text = recipe.memo
     }
+    
+    
+    
+    
+    
+    
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         recipeTitleTextField.resignFirstResponder()
@@ -30,6 +44,29 @@ class RecipeInfoViewController: UIViewController, UINavigationControllerDelegate
         return true
     }
 //keyboardが消える
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     @IBAction func addRecipe(_ sender: Any) {

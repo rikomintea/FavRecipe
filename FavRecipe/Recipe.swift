@@ -11,11 +11,9 @@ import RealmSwift
 
 class Recipe: Object {
     @objc dynamic var recipeTitle: String = ""
-    @objc dynamic var recipeImagePath: String = ""
+    
     @objc dynamic var recipeURL: String = ""
 //@objc dynamic var isGood: Boolean
     @objc dynamic var memo: String = ""
     
 }
-
-

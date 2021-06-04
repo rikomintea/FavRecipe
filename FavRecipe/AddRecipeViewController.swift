@@ -9,7 +9,9 @@ import UIKit
 import RealmSwift
 
 class AddRecipeViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate,UITextFieldDelegate{
-    
+
+
+
     @IBOutlet var photoImageView: UIImageView!
     
     
@@ -31,12 +33,30 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
         }
     }
     
+    
+    
+    
+    
     func imagePickerController(_ picker:UIImagePickerController,
                                didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey:Any]){
-        
+        let realm = try! Realm()
+            // 撮影した写真の取得
+            let image = info[.originalImage] as! UIImage
+            // 写真を変換
+            let data = NSData(data: image.jpegData(compressionQuality: 0.9)!)
+            // Realmにデータを保存する
+            let pictureData = PictureData()
+            // 写真を設定
+            pictureData.data = data
+            // 写真の説明を設定
+            
+            // Realmにデータを書き込む
+            try! realm.write {
+                realm.add(pictureData)
+            }
         self.dismiss(animated: true,completion: nil)
         
-        photoImageView.image = info[.originalImage]as?UIImage
+        
     }
     
     
@@ -49,6 +69,12 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet var memoTextField: UITextField!
     
     let realm = try! Realm()
+ 
+    
+    
+
+    
+    
     
     
     override func viewDidLoad() {

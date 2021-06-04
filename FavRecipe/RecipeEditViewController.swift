@@ -16,7 +16,6 @@ class RecipeEditViewController: UIViewController, UINavigationControllerDelegate
     }
     
     @IBAction func onTappedAlbumButton(){
-        print("osaretayonn")
         presentPickerContoroller(sourceType: .photoLibrary)
     }
     

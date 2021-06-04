@@ -6,7 +6,10 @@
 //
 
 import UIKit
+import RealmSwift
 
+
+    
 class RecipeListTableViewCell: UITableViewCell {
 
     @IBOutlet var recipeImage: UIImageView!
@@ -27,3 +30,4 @@ class RecipeListTableViewCell: UITableViewCell {
     }
 
 }
+

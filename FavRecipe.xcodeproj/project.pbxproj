@@ -11,6 +11,7 @@
 		CE4B8D9E265D003E00FCCE4D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE4B8D9D265D003E00FCCE4D /* Realm */; };
 		CE4B8DA0265D003E00FCCE4D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4B8D9F265D003E00FCCE4D /* RealmSwift */; };
 		CE4C8EDF26635F1300425E46 /* RecipeEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C8EDE26635F1300425E46 /* RecipeEditViewController.swift */; };
+		CEB10C6426666CC90064017F /* RecipeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB10C6326666CC80064017F /* RecipeImage.swift */; };
 		CEB7C54326530C4600BC1354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7C54226530C4600BC1354 /* AppDelegate.swift */; };
 		CEB7C54526530C4600BC1354 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7C54426530C4600BC1354 /* SceneDelegate.swift */; };
 		CEB7C54A26530C4600BC1354 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB7C54826530C4600BC1354 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		CE37E0AB265FF963002AF09A /* RecipeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTableViewCell.swift; sourceTree = "<group>"; };
 		CE4C8EDE26635F1300425E46 /* RecipeEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditViewController.swift; sourceTree = "<group>"; };
+		CEB10C6326666CC80064017F /* RecipeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeImage.swift; sourceTree = "<group>"; };
 		CEB7C53F26530C4600BC1354 /* FavRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB7C54226530C4600BC1354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB7C54426530C4600BC1354 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				CEFC4F32265CE8CD0032AB0A /* Recipe.swift */,
 				CE37E0AB265FF963002AF09A /* RecipeListTableViewCell.swift */,
 				CE4C8EDE26635F1300425E46 /* RecipeEditViewController.swift */,
+				CEB10C6326666CC80064017F /* RecipeImage.swift */,
 			);
 			path = FavRecipe;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEC0CC1265A412A0010161E /* AddRecipeViewController.swift in Sources */,
+				CEB10C6426666CC90064017F /* RecipeImage.swift in Sources */,
 				CEFC4F33265CE8CD0032AB0A /* Recipe.swift in Sources */,
 				CEFC4EB8265A43D80032AB0A /* RecipeListViewController.swift in Sources */,
 				CEEC0CC3265A415D0010161E /* RecipeInfoViewController.swift in Sources */,
