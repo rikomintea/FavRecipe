@@ -39,21 +39,11 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
     
     func imagePickerController(_ picker:UIImagePickerController,
                                didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey:Any]){
-        let realm = try! Realm()
+        
             // 撮影した写真の取得
-            let image = info[.originalImage] as! UIImage
-            // 写真を変換
-            let data = NSData(data: image.jpegData(compressionQuality: 0.9)!)
-            // Realmにデータを保存する
-            let pictureData = PictureData()
-            // 写真を設定
-            pictureData.data = data
-            // 写真の説明を設定
+        photoImageView.image = info[.originalImage] as? UIImage
             
-            // Realmにデータを書き込む
-            try! realm.write {
-                realm.add(pictureData)
-            }
+        
         self.dismiss(animated: true,completion: nil)
         
         
@@ -103,6 +93,13 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
         newRecipe.recipeURL = recipeURLTextField.text!
         newRecipe.memo = memoTextField.text!
         //newRecipe.recipeImagePath =
+        // 写真を変換
+        let data = NSData(data: photoImageView.image!.jpegData(compressionQuality: 0.9)!)
+        
+        newRecipe.data = data
+        
+        
+        
         
         try! realm.write {
             print("ちゃんと保存されました")

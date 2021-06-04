@@ -327,7 +327,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="memoTextField" destination="IgM-07-tkQ" id="BMi-pU-OTu"/>
-                        <outlet property="recipeImageView" destination="tu6-DZ-M3g" id="7Ye-Ar-2i8"/>
+                        <outlet property="photoImageView" destination="tu6-DZ-M3g" id="8rB-h0-vJ0"/>
                         <outlet property="recipeTitleTextField" destination="Pm6-C1-gRG" id="9Wh-Nc-zk8"/>
                         <outlet property="recipeURLTextField" destination="vrD-7Y-ZDP" id="n3n-qE-VoU"/>
                     </connections>

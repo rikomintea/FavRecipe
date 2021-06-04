@@ -19,23 +19,18 @@ class RecipeListViewController: UIViewController,UITableViewDelegate,UITableView
     
     
     
-    let realm = try!Realm()
+    let realm = Recipe()
     let recipes = try!Realm().objects(Recipe.self)
-    
+    //辞書型？に変換
     
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return recipes.count
+       print(recipes)
+        
+        return recipes.count
     }
     //セルの数はレシピの数の一致する
-    // tableViewに何個表示するかを伝える
-  /*  func tableView(_ tableView: UITableView, numberOfItemsInSection section: Int) -> Int {
-        // picturesの配列の中身の数を表示する
-       return pictures.count
-    }　*/
-
-    
     
     
 
@@ -56,16 +51,27 @@ class RecipeListViewController: UIViewController,UITableViewDelegate,UITableView
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 100
+        
+        
+        
+    }
     
-
+    
+    
+    
+    
+    
         
     // さっき作ったtableViewのセルにアイテムを表示
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Main.StoryboardのCellを探してくる
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeListTableViewCell", for: indexPath) as! RecipeListTableViewCell
         // imageViewに写真を表示
-        cell.recipeImage.image = UIImage(data: pictures[indexPath.row].data as Data)
-        
+        cell.recipeImage.image = UIImage(data: recipes[indexPath.row].data as Data)
+        cell.recipeTitle.text = recipes[indexPath.row].recipeTitle
         // Cellに適用する
         return cell
     }
@@ -129,14 +135,14 @@ class RecipeListViewController: UIViewController,UITableViewDelegate,UITableView
     
     
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-          try! realm.write {
-            realm.delete(recipes[indexPath.row] as ObjectBase)
-          }
-          tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCell.EditingStyle.delete {
+//          try! realm.write {
+//            realm.delete(recipes[indexPath.row] as ObjectBase)
+//          }
+//          tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+//        }
+//    }
         //動作
         
 

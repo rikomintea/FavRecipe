@@ -15,7 +15,8 @@ class Recipe: Object {
     @objc dynamic var recipeURL: String = ""
 //@objc dynamic var isGood: Boolean
     @objc dynamic var memo: String = ""
-    
+    @objc dynamic var data: NSData!
 }
 //@objc dynamic var data: NSData!
+
 

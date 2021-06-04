@@ -6,13 +6,13 @@
 //
 
 import UIKit
-
+import RealmSwift
 class RecipeInfoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate,UITextFieldDelegate{
     
     
     var num = Int()
     
-    var recipe: Recipe!
+    var recipe = try!Realm().objects(Recipe.self)
     var recipeImage:PictureData!
     
     
@@ -23,11 +23,14 @@ class RecipeInfoViewController: UIViewController, UINavigationControllerDelegate
     
     
     
+    
+    
     override func viewDidLoad() {
-        //photoImageView.image  = recipeImage.data
-        recipeTitleTextField.text = recipe.recipeTitle
-        recipeURLTextField.text = recipe.recipeURL
-        memoTextField.text = recipe.memo
+        super.viewDidLoad()//意外と大切な子
+        photoImageView.image  = UIImage(data: recipe[num].data as Data)
+        recipeTitleTextField.text = recipe[num].recipeTitle
+        recipeURLTextField.text = recipe[num].recipeURL
+        memoTextField.text = recipe[num].memo
     }
     
     
