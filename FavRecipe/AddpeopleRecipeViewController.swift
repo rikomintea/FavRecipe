@@ -1,14 +1,14 @@
 //
-//  AddRecipeViewController.swift
+//  AddpeopleRecipeViewController.swift
 //  FavRecipe
 //
-//  Created by スマート・ナビ on 2021/05/23.
+//  Created by RIKO on 2021/06/11.
 //
 
 import UIKit
 import RealmSwift
 
-class AddRecipeViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate,UITextFieldDelegate, UITextViewDelegate{
+class AddpeopleRecipeViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate,UITextFieldDelegate, UITextViewDelegate{
     
     
     @IBOutlet var cameraButton: UIButton!
@@ -56,7 +56,7 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
     
     
     @IBOutlet var recipeTitleTextField: UITextField!
-    @IBOutlet var recipeURLTextField: UITextField!
+    @IBOutlet var recipepeopleTextField: UITextField!
     @IBOutlet var memoTextView: UITextView!
     
     let realm = try! Realm()
@@ -66,7 +66,7 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
         super.viewDidLoad()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         self.recipeTitleTextField.delegate = self
-        self.recipeURLTextField.delegate = self
+        self.recipepeopleTextField.delegate = self
         self.memoTextView.delegate = self
         memoTextView.layer.borderWidth = 1
         memoTextView.layer.borderColor = UIColor.lightGray.cgColor
@@ -75,10 +75,10 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
         if recipeData != nil {
             photoImageView.image  = UIImage(data: recipeData.data as Data)
             recipeTitleTextField.text = recipeData.recipeTitle
-            recipeURLTextField.text = recipeData.recipeURL
+            recipepeopleTextField.text = recipeData.recipeURL
             memoTextView.text = recipeData.memo
             recipeTitleTextField.isEnabled = false
-            recipeURLTextField.isEnabled = false
+            recipepeopleTextField.isEnabled = false
             memoTextView.isEditable = false
             memoTextView.isSelectable = false
             albumButton.isHidden = true
@@ -93,7 +93,7 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
     
     @IBAction func didTapEdit(){
         recipeTitleTextField.isEnabled = true
-        recipeURLTextField.isEnabled = true
+        recipepeopleTextField.isEnabled = true
         memoTextView.isEditable = true
         memoTextView.isSelectable = true
         albumButton.isHidden = false
@@ -105,7 +105,7 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         recipeTitleTextField.resignFirstResponder()
-        recipeURLTextField.resignFirstResponder()
+        recipepeopleTextField.resignFirstResponder()
         memoTextView.resignFirstResponder()
         return true
     }
@@ -118,14 +118,14 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
             //            let currentRecipe = realm.objects(Recipe.self).filter("id == \(recipeData.id)")
             try! realm.write {
                 recipeData.recipeTitle = recipeTitleTextField.text!
-                recipeData.recipeURL = recipeURLTextField.text!
+                recipeData.recipepeople = recipepeopleTextField.text!
                 recipeData.memo = memoTextView.text!
             }
         } else {
         //nilだったら新しいのを作る
             let newRecipe = Recipe()
             newRecipe.recipeTitle = recipeTitleTextField.text!
-            newRecipe.recipeURL = recipeURLTextField.text!
+            newRecipe.recipepeople = recipepeopleTextField.text!
             newRecipe.memo = memoTextView.text!
             newRecipe.dataType = "recipe"
             //newRecipe.recipeImagePath =
@@ -167,5 +167,3 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
         //        dismiss(animated: true, completion: nil)
     }
 }
-
-
